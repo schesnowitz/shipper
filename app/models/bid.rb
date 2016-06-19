@@ -1,3 +1,3 @@
 class Bid < ActiveRecord::Base
-    belongs_to :gig
+    belongs_to :shipment
 end
