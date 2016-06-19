@@ -1,3 +1,3 @@
 git add -A
-git commit -m "set up index view"
+git commit -m "user 2 models"
 git push -u origin master

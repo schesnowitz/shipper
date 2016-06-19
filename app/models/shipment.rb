@@ -3,4 +3,5 @@ class Shipment < ActiveRecord::Base
     belongs_to :shipment_category
     has_many :abilities
     has_many :rigs, through: :abilities
+    belongs_to :user
 end

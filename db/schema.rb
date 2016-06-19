@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160619180105) do
+ActiveRecord::Schema.define(version: 20160619211753) do
 
   create_table "abilities", force: :cascade do |t|
     t.integer "shipments_id"
@@ -24,7 +24,9 @@ ActiveRecord::Schema.define(version: 20160619180105) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "shipments_id"
+    t.integer  "user_id"
     t.index ["shipments_id"], name: "index_bids_on_shipments_id"
+    t.index ["user_id"], name: "index_bids_on_user_id"
   end
 
   create_table "rigs", force: :cascade do |t|
@@ -46,8 +48,10 @@ ActiveRecord::Schema.define(version: 20160619180105) do
     t.datetime "updated_at",                            null: false
     t.integer  "shipment_categories_id"
     t.integer  "rigs_id"
+    t.integer  "user_id"
     t.index ["rigs_id"], name: "index_shipments_on_rigs_id"
     t.index ["shipment_categories_id"], name: "index_shipments_on_shipment_categories_id"
+    t.index ["user_id"], name: "index_shipments_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
