@@ -12,6 +12,9 @@ gem 'turbolinks', '~> 5.x'
 gem 'jbuilder', '~> 2.0'
 gem 'redis', '~> 3.0'
 gem 'bcrypt', '~> 3.1.7'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+gem 'simple_form', '~> 3.2', '>= 3.2.1'
+gem 'devise', '~> 4.1', '>= 4.1.1'
 
 
 group :development, :test do
