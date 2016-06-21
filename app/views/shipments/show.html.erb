@@ -6,3 +6,4 @@
 <%= @shipment.winning_bid %>
 about <%= time_ago_in_words(@shipment.created_at) %> ago
 
+<%= link_to "Edit Shipment", edit_shipment_path(@shipment) %>

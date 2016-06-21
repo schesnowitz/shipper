@@ -23,6 +23,22 @@ class ShipmentsController < ApplicationController
     end
   end
   
+  def edit
+    @shipment = Shipment.find(params[:id])
+  end
+  
+  def update
+    @shipment = Shipment.find(params[:id])
+    @shipment.user = current_user
+    if @shipment.update(the_shipment_parameters)
+    redirect_to @shipment
+    flash[:notice] = "Your shipment has been updated"
+    else
+      flash[:alert] = "there was an problem updating your shipment."
+      render :edit
+    end
+  end
+  
   
   private 
   
