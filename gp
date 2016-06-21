@@ -1,3 +1,3 @@
 git add -A
-git commit -m "user 2 models"
+git commit -m "creating-shipments merger"
 git push -u origin master
