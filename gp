@@ -1,3 +1,3 @@
 git add -A
-git commit -m "edit-shipment merger"
+git commit -m "shipment-index merger"
 git push -u origin master
