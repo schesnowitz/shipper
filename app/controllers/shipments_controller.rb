@@ -1,6 +1,7 @@
 class ShipmentsController < ApplicationController
   
   def index
+    @shipments = Shipment.all.order(created_at: :desc)
   end
   
   def new

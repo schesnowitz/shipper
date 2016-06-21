@@ -1,1 +1,77 @@
 <h1>Hello World</h1>
+
+<% @shipments.each do |ship| %>
+
+<table class="table table-bordered table-responsive">
+	<thead>
+		<tr>
+			<th>
+				Posted At
+			</th>
+			<th>
+				Category
+			</th>
+			<th>
+				From
+			</th>
+			<th>
+				To
+			</th>
+			<th>
+				Rate
+			</th>
+			<th>
+				Lowest Bid
+			</th>
+			<th>
+				[HEADER]
+			</th>
+			<th>
+				[HEADER]
+			</th>
+			<th>
+				[HEADER]
+			</th>
+			<th>
+				[HEADER]
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<%= time_ago_in_words(ship.created_at) %>
+			</td>
+			<td>
+				Category here
+			</td>
+			<td>
+				<%= ship.location %>
+			</td>
+			<td>
+				To goes here
+			</td>
+			<td>
+			<%= ship.budget %>
+			</td>
+			<td>
+				Lowest Bid
+			</td>
+			<td>
+				[CONTENT]
+			</td>
+			<td>
+				[CONTENT]
+			</td>
+			<td>
+				[CONTENT]
+			</td>
+			<td>
+				<%= link_to "Details", ship, class: "btn btn-info btn-xs" %> 
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<% end %>
+
