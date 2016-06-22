@@ -1,5 +1,5 @@
-<h1>Hello World</h1>
-
+<h1>Shipper Shipments</h1>
+<%= paginate @shipments %> 
 <% @shipments.each do |ship| %>
 
 <table class="table table-bordered table-responsive">
@@ -74,4 +74,6 @@
 </table>
 
 <% end %>
+
+<%= paginate @shipments %> 
 

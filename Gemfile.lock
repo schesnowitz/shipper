@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/amatsuda/kaminari.git
+  revision: b61d2fc1dbb6dce3736c407ef38e78e44af72cb6
+  branch: master
+  specs:
+    kaminari (1.0.0.alpha)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -190,6 +199,7 @@ DEPENDENCIES
   faker (~> 1.6, >= 1.6.3)
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari!
   listen (~> 3.0.5)
   puma (~> 3.0)
   rails (>= 5.0.0.rc1, < 5.1)

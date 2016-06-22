@@ -16,6 +16,10 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'devise', '~> 4.1', '>= 4.1.1'
 gem 'faker', '~> 1.6', '>= 1.6.3'
+gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'master'
+
+
+
 
 group :development, :test do
   gem 'byebug', platform: :mri
