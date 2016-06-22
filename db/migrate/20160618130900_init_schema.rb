@@ -28,7 +28,7 @@ class InitSchema < ActiveRecord::Migration[5.0]
     create_table :abilities do |t|
     end
     
-    add_reference :shipments, :shipment_categories, index: true
+    add_reference :shipments, :shipment_category, index: true
     add_reference :bids, :shipments, index: true
     add_reference :abilities, :shipments, index: true
     add_reference :shipments, :rigs, index: true
