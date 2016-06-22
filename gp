@@ -1,3 +1,3 @@
 git add -A
-git commit -m "pagination merger"
+git commit -m "searching merger"
 git push -u origin master
