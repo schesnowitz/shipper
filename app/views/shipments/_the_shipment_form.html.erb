@@ -1,5 +1,6 @@
 <%= simple_form_for @shipment do |s| %>
-<%= s.select :shipment_category_id, options_from_collection_for_select(ShipmentCategory.all, :id, :name)%>
+
+<%= s.select :shipment_category_id, ShipmentCategory.all.map{ |category| [ category.name, category.id ]} %>
 <%= s.input :name %>
 <%= s.input :description %>
 <%= s.input :budget %>

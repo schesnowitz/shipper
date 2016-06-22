@@ -53,7 +53,8 @@ class ShipmentsController < ApplicationController
                                      :budget, 
                                      :location, 
                                      :open_for_bids, 
-                                     :winning_bid)
+                                     :winning_bid,
+                                     :shipment_category_id)
   end
 end
 
