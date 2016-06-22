@@ -42,15 +42,15 @@ ActiveRecord::Schema.define(version: 20160619211753) do
     t.text     "description"
     t.integer  "budget"
     t.string   "location"
-    t.boolean  "open_for_bids",          default: true
+    t.boolean  "open_for_bids",        default: true
     t.integer  "winning_bid"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
-    t.integer  "shipment_categories_id"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.integer  "shipment_category_id"
     t.integer  "rigs_id"
     t.integer  "user_id"
     t.index ["rigs_id"], name: "index_shipments_on_rigs_id"
-    t.index ["shipment_categories_id"], name: "index_shipments_on_shipment_categories_id"
+    t.index ["shipment_category_id"], name: "index_shipments_on_shipment_category_id"
     t.index ["user_id"], name: "index_shipments_on_user_id"
   end
 
