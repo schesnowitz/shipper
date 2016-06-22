@@ -1,3 +1,3 @@
 git add -A
-git commit -m "searching merger"
+git commit -m "fix-cat-input merger"
 git push -u origin master
