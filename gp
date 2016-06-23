@@ -1,3 +1,3 @@
 git add -A
-git commit -m "shipment-delete merger"
+git commit -m "railsie merger"
 git push -u origin master
