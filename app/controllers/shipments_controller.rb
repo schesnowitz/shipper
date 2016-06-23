@@ -42,6 +42,14 @@ class ShipmentsController < ApplicationController
     end
   end
   
+    def destroy
+      @shipment = Shipment.find(params[:id])
+      if @shipment.destroy
+      redirect_to root_url
+      flash[:notice] = "Your shipment has been deleted"
+    end
+  end
+  
   def search
     @shipments = Shipment.search(params).page(params[:page]).per(15)
   end
