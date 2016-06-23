@@ -1,5 +1,6 @@
 class ShipmentsController < ApplicationController
-  before_action :find_id
+  before_action :find_id, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:edit, :update, :destroy, :new]
   
   
   def index
@@ -7,16 +8,15 @@ class ShipmentsController < ApplicationController
   end
   
   def new
-    @shipment = Shipment.new
+    @shipment = current_user.shipments.new
   end 
   
   def show
-    @shipment = Shipment.find(params[:id])
+
   end
   
   def create
-    @shipment = Shipment.new(the_shipment_parameters)
-    @shipment.user = current_user
+    @shipment = current_user.shipments.new(the_shipment_parameters)
     if @shipment.save
     redirect_to @shipment
     flash[:notice] = "Your shipment has been saved"
@@ -27,12 +27,10 @@ class ShipmentsController < ApplicationController
   end
   
   def edit
-    @shipment = Shipment.find(params[:id])
+
   end
   
   def update
-    @shipment = Shipment.find(params[:id])
-    @shipment.user = current_user
     if @shipment.update(the_shipment_parameters)
     redirect_to @shipment
     flash[:notice] = "Your shipment has been updated"
@@ -43,7 +41,6 @@ class ShipmentsController < ApplicationController
   end
   
     def destroy
-      @shipment = Shipment.find(params[:id])
       if @shipment.destroy
       redirect_to root_url
       flash[:notice] = "Your shipment has been deleted"
@@ -60,6 +57,7 @@ class ShipmentsController < ApplicationController
   def find_id
     @shipment = Shipment.find(params[:id])
   end
+  
   
   def the_shipment_parameters
     params.require(:shipment).permit(:name, 
