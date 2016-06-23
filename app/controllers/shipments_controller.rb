@@ -1,4 +1,6 @@
 class ShipmentsController < ApplicationController
+  before_action :find_id
+  
   
   def index
     @shipments = Shipment.all.order(created_at: :desc).page(params[:page]).per(15)
@@ -46,6 +48,10 @@ class ShipmentsController < ApplicationController
   
   
   private 
+  
+  def find_id
+    @shipment = Shipment.find(params[:id])
+  end
   
   def the_shipment_parameters
     params.require(:shipment).permit(:name, 
