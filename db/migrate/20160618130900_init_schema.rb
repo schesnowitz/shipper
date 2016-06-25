@@ -5,9 +5,14 @@ class InitSchema < ActiveRecord::Migration[5.0]
       t.string :name
       t.text :description
       t.integer :budget
-      t.string :location
       t.boolean :open_for_bids, default: true
       t.integer :winning_bid
+      t.string :origin_street_address
+      t.string :origin_city
+      t.string :origin_state_provence
+      t.string :origin_postal_code
+      t.float :origin_latitude
+      t.float :origin_longitude
       t.timestamps
     end
     

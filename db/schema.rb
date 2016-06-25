@@ -29,6 +29,21 @@ ActiveRecord::Schema.define(version: 20160619211753) do
     t.index ["user_id"], name: "index_bids_on_user_id"
   end
 
+  create_table "destinations", force: :cascade do |t|
+    t.string   "destination_street_address"
+    t.string   "destination_city"
+    t.string   "destination_state_provence"
+    t.string   "destination_postal_code"
+    t.float    "destination_latitude"
+    t.float    "destination_longitude"
+    t.integer  "user_id"
+    t.integer  "shipment_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["shipment_id"], name: "index_destinations_on_shipment_id"
+    t.index ["user_id"], name: "index_destinations_on_user_id"
+  end
+
   create_table "rigs", force: :cascade do |t|
     t.string "equipment"
   end
@@ -41,11 +56,16 @@ ActiveRecord::Schema.define(version: 20160619211753) do
     t.string   "name"
     t.text     "description"
     t.integer  "budget"
-    t.string   "location"
-    t.boolean  "open_for_bids",        default: true
+    t.boolean  "open_for_bids",         default: true
     t.integer  "winning_bid"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.string   "origin_street_address"
+    t.string   "origin_city"
+    t.string   "origin_state_provence"
+    t.string   "origin_postal_code"
+    t.float    "origin_latitude"
+    t.float    "origin_longitude"
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.integer  "shipment_category_id"
     t.integer  "rigs_id"
     t.integer  "user_id"

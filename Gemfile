@@ -17,8 +17,7 @@ gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'devise', '~> 4.1', '>= 4.1.1'
 gem 'faker', '~> 1.6', '>= 1.6.3'
 gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'master'
-
-
+gem 'geocoder', '~> 1.3', '>= 1.3.7'
 
 
 group :development, :test do

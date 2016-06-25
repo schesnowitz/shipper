@@ -21,7 +21,7 @@ class ShipmentsController < ApplicationController
     redirect_to @shipment
     flash[:notice] = "Your shipment has been saved"
     else
-      flash[:alert] = "there was an error"
+      flash[:alert] = "There was a problem sporto"
       render :new
     end
   end
@@ -63,10 +63,14 @@ class ShipmentsController < ApplicationController
     params.require(:shipment).permit(:name, 
                                      :description, 
                                      :budget, 
-                                     :location, 
                                      :open_for_bids, 
                                      :winning_bid,
-                                     :shipment_category_id)
+                                     :shipment_category_id,
+                                     :origin_street_address,
+                                     :origin_city,
+                                     :origin_state_provence,
+                                     :origin_postal_code
+                                     )
   end
 end
 

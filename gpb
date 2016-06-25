@@ -1,3 +1,3 @@
 git add -A
-git commit -m "railsie"
-git push origin railsie
+git commit -m "g-code origin address"
+git push origin g-code
