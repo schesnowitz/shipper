@@ -1,3 +1,3 @@
 git add -A
-git commit -m "railsie merger"
+git commit -m "g-code section merger" 
 git push -u origin master
