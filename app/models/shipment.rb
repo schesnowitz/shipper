@@ -4,6 +4,8 @@ class Shipment < ActiveRecord::Base
     has_many :abilities
     has_many :rigs, through: :abilities
     belongs_to :user
+    has_many :destinations, inverse_of: :shipment
+    accepts_nested_attributes_for :destinations
 
     validates :name, presence: true
     

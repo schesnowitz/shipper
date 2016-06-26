@@ -16,6 +16,17 @@ class InitSchema < ActiveRecord::Migration[5.0]
       t.timestamps
     end
     
+    create_table :destinations do |t|
+      t.string :destination_street_address
+      t.string :destination_city
+      t.string :destination_state_provence
+      t.string :destination_postal_code
+      t.float :destination_latitude
+      t.float :destination_longitude
+      t.integer :user_id
+      t.integer :shipment_id
+    end
+    
     create_table :shipment_categories do |t|
       t.string :name
     end

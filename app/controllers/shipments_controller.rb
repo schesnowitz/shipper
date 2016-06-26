@@ -9,14 +9,16 @@ class ShipmentsController < ApplicationController
   
   def new
     @shipment = current_user.shipments.new
+    @shipment.destinations.new 
   end 
   
   def show
-
+    @destination = Destination.find(params[:id]) 
   end
   
   def create
     @shipment = current_user.shipments.new(the_shipment_parameters)
+    @shipment.destinations.first.user_id = current_user.id
     if @shipment.save
     redirect_to @shipment
     flash[:notice] = "Your shipment has been saved"
@@ -69,8 +71,12 @@ class ShipmentsController < ApplicationController
                                      :origin_street_address,
                                      :origin_city,
                                      :origin_state_provence,
-                                     :origin_postal_code
-                                     )
+                                     :origin_postal_code,
+                                     destinations_attributes: [:destination_state_provence,
+                                     :destination_city,
+                                     :destination_state_provence,
+                                     :destination_postal_code])
+                                     
   end
 end
 

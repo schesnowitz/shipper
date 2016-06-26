@@ -1,16 +1,65 @@
 <%= simple_form_for @shipment do |s| %>
 
 <%= s.select :shipment_category_id, ShipmentCategory.all.map{ |category| [ category.name, category.id ]} %>
-<%= s.input :name %>
-<%= s.input :description %>
-<%= s.input :budget %>
-<%= s.input :open_for_bids %>
-<%= s.input :origin_street_address %>
-<%= s.input :origin_city %>
-<%= s.input :origin_state_provence %>
-<%= s.input :origin_postal_code %>
+ <div class="row">
+  <div class="col-sm-4">
+    <%= s.input :name %>
+  </div>
+  <div class="col-sm-8">
+    <%= s.input :description %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3">
+    <%= s.input :origin_street_address %>
+  </div>
+  <div class="col-sm-3">
+    <%= s.input :origin_city %>
+  </div>
+  <div class="col-sm-3">
+    <%= s.input :origin_state_provence %>
+  </div>
+  <div class="col-sm-3">
+    <%= s.input :origin_postal_code %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3">
+    <%= s.input :budget %>
+  </div>
+  <div class="col-sm-3">
+    <%= s.input :open_for_bids %>
+  </div>
+  <div class="col-sm-3"></div>
+  <div class="col-sm-3"></div>
+</div>
 
 
+
+
+
+
+
+
+
+<%=s.fields_for :destinations do |d| %>
+  <div class="row">
+    <div class="col-sm-3">
+      <%= d.input :destination_street_address %>
+    </div>
+    <div class="col-sm-3">
+      <%= d.input :destination_city %>
+    </div>
+    <div class="col-sm-3">
+      <%= d.input :destination_state_provence %>
+    </div>
+    <div class="col-sm-3">
+      <%= d.input :destination_postal_code %>
+    </div>
+  </div>
+<% end %>
 
 <%= s.submit class: "btn btn-success" %>  
 <% end %>

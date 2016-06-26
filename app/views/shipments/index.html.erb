@@ -5,7 +5,7 @@
 <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
 <%= paginate @shipments %> 
-<% @shipments.each do |ship| %>
+
 
 <table class="table table-bordered table-responsive">
 	<thead>
@@ -42,6 +42,7 @@
 			</th>
 		</tr>
 	</thead>
+	<% @shipments.each do |ship| %>
 	<tbody>
 		<tr>
 			<td>
@@ -57,7 +58,7 @@
 				Category here
 			</td>
 			<td>
-				<%= ship.location %>
+
 			</td>
 			<td>
 				To goes here
@@ -76,9 +77,10 @@
 			</td>
 		</tr>
 	</tbody>
+	<% end %>
 </table>
 
-<% end %>
+
 
 <%= paginate @shipments %> 
 

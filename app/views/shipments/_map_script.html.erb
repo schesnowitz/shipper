@@ -1,0 +1,35 @@
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&AMP;sensor=false">
+</script>
+
+
+
+
+<script type="text/javascript">
+function initialize() {
+  var source = new google.maps.LatLng(<%= @shipment.origin_latitude %>, <%= @shipment.origin_longitude %>);
+  var dest = new google.maps.LatLng(<%= @destination.destination_latitude %>, <%= @destination.destination_longitude %>);
+  var mapOptions = {
+    center: source,
+    zoom: 8
+
+  }
+  var mapOptions2 = {
+    center: dest,
+    zoom: 8
+
+  }
+
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+  var map2 = new google.maps.Map(document.getElementById('map-canvas2'), mapOptions2);
+
+  var marker = new google.maps.Marker({
+    position:source,
+    map: map
+  });
+  var marker2 = new google.maps.Marker({
+    position:dest,
+    map: map2
+  });
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
